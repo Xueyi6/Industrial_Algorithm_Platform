@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icon/PluginIcon/Canny.png</file>
+        <file>icon/PluginIcon/Photometric.png</file>
+        <file>icon/PluginIcon/PCBDETECT.png</file>
+        <file>icon/PluginIcon/Contour.png</file>
+        <file>icon/PluginIcon/platform.png</file>
+    </qresource>
+</RCC>
