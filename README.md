@@ -1,6 +1,6 @@
 # 工业视觉算法平台
 
-演示视频：
+演示视频：https://www.bilibili.com/video/BV1qXbmzWEuc/
 
 `这是一个基于 Qt + OpenCV + PyTorch 的图像算法集成平台，支持图像预处理、三维重建、目标检测、轮廓分析等常见工业视觉任务。`
 
