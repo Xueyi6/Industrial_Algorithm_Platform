@@ -2,6 +2,8 @@
 
 演示视频：https://www.bilibili.com/video/BV1qXbmzWEuc/
 
+配置详解：https://blog.csdn.net/qq_47542869/article/details/149785477
+
 `这是一个基于 Qt + OpenCV + PyTorch 的图像算法集成平台，支持图像预处理、三维重建、目标检测、轮廓分析等常见工业视觉任务。`
 
 ## 📌 功能模块：
