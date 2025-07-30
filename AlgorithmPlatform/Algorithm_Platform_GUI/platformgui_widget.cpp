@@ -113,6 +113,7 @@ void PlatformGUI_Widget::on_changeProcessView(CustomGraphicsView *customView)
     }
     if(litimgWidget->m_pProcess->name().contains("Photom")){
         ui->is_continuous->setEnabled(false);
+        ui->Stop_run->setEnabled(false);
     }else {
         ui->is_continuous->setEnabled(true);
     }
@@ -146,7 +147,6 @@ void PlatformGUI_Widget::Load_Result_Imgs()
 bool PlatformGUI_Widget::initAlgorithmThread()
 {
     if (algoThread) return true; // 已初始化就不重复做
-
     algoWorker = new AlgorithmWorker();  // 不带参数
     algoThread = new QThread();
     litimgWidget->setAlgorithmWorker(algoWorker);
@@ -194,6 +194,8 @@ void PlatformGUI_Widget::on_Export_clicked()
         return;
     }
     ui->Export->setEnabled(false);
+    // 得到导出数量，提示需要
+    export_num = resultlitwidget->m_dstImages.size();
     litimgWidget->export_result(dirPath);
 }
 
@@ -202,7 +204,7 @@ void PlatformGUI_Widget::exportHandle(bool flag)
     if (flag) {
         QMessageBox::information(resultlitwidget,
                                  tr("导出成功"),
-                                 tr("共导出图像数: %1 ").arg(resultlitwidget->m_dstImages.count()));
+                                 tr("共导出图像数: %1 ").arg(export_num));
     } else {
         QMessageBox::warning(resultlitwidget,
                              tr("导出错误"),
