@@ -6,7 +6,7 @@
 namespace PCBDebug {
 
 // ==== 内部全局状态 ====
-static std::vector<std::string> g_classNames = {"missing_hole", "mouse_bite", "open_circuit", "short", "spur", "spurious_copper"}; // 请根据模型实际类别改
+static std::vector<std::string> g_classNames = {"missing_hole", "mouse_bite", "open_circuit", "short", "spur", "spurious_copper"};
 static std::string g_currentModelPath;
 static std::shared_mutex g_net_mutex;
 static cv::dnn::Net g_net;
@@ -75,13 +75,11 @@ uint32_t DetectPCBDefect(const cv::Mat& srcImage,
         det = det.reshape(1, det.size[1]);  // [N, dims]
     }
     /*
-    你的是 11 维，说明：
-
     [0:4]：位置（x, y, w, h）
 
     [4]：objectness 置信度
 
-    [5:11]：你训练的 6 个类别（因为 11 - 5 = 6）
+    [5:11]：训练的 6 个类别（ 11 - 5 = 6）
     */
     std::vector<cv::Rect> boxes;
     std::vector<float> confidences;
